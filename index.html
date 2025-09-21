@@ -2,23 +2,59 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Test</title>
-<link href="favicon.svg" rel="icon" sizes="any" type="image/svg+xml">
+<title>Kasir</title>
+<link href="img/logo.svg" rel="icon" sizes="any" type="image/svg+xml">
+<link href="font/css/all.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
 
-<style>
-* {
-	box-sizing: border-box;
-	font-size: 1.5vmin;
+<script>
+
+const ddClick = a => {
+	(b => {
+		b && b.classList.remove('active')
+		b != a.target && a.target.classList.add('active')
+	})(document.querySelector('.nav-left .active'))
 }
-body {
-	margin: 0;
-	padding: 0;
-}
-</style>
+</script>
+
 </head><body>
-
-<h2>Hello World!</h2>
-
+<div class="nav-top">
+	<a class="logo" href="index.html">
+		<img src="img/logo.svg" alt="logo">
+		<span>Kasir</span>
+	</a>
+	<div class="separator"></div>
+</div>
+<div class="layout">
+	<div class="nav-left">
+		<a href="#" onclick="ddClick(event)">DASBOARD</a>
+		<div>
+			<div onclick="ddClick(event)">
+				<span>DATABASE</span>
+				<i class="fa fa-caret-down"></i>
+			</div>
+			<div>
+				<a href="#" onclick="ddClick(event)">BARANG</a>
+				<a href="#" onclick="ddClick(event)">KATEGORI</a>
+				<a href="#" onclick="ddClick(event)">USER</a>
+			</div>
+		</div>
+		<div>
+			<div onclick="ddClick(event)">
+				<span>TRANSAKSI</span>
+				<i class="fa fa-caret-down"></i>
+			</div>
+			<div>
+				<a href="#" onclick="ddClick(event)">PENJUALAN</a>
+				<a href="#" onclick="ddClick(event)">PEMBELIAN</a>
+				<a href="#" onclick="ddClick(event)">RETUR</a>
+			</div>
+		</div>
+		<a href="#" onclick="ddClick(event)">LAPORAN</a>
+		<a href="#">PENGATURAN</a>
+	</div>
+	<div class="content"></div>
+</div>
 </body>
 </html>
 

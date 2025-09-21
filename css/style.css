@@ -1,0 +1,117 @@
+* {
+	box-sizing: border-box;
+	font-family: Tahoma, Verdana, sans-serif;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+.nav-top {
+	align-items: center;
+	background: #d1e1f1;/*#471797; #4387f5; #111; .bg-biru #4fbada; .bg-orange #e7913c; .bg-hijau #24b665; .bg-ungu #7369cf; red #F54927; rgb(78, 115, 223) #4f73df #4387f5 */
+	border-bottom: 1px solid rgba(255,255,255,0.5);
+	box-shadow: 0 1px 7px 1px rgba(0,0,0,0.3);
+	display: flex;
+	height: 69px;
+	padding: 5px;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+.nav-top > .logo {
+	display: flex;
+	gap: 11px;
+	height: 45px;
+	margin: 0 21px;
+	padding: 0 11px;
+	text-decoration: none;
+}
+.nav-top > .logo > img {
+	height: 39px;
+	width: 39px;
+}
+.nav-top > .logo > span {
+	align-self: flex-end;
+	color: #91b1f1;
+	display: flex;
+	font-size: 27px;
+	font-weight: bold;
+	text-shadow:
+		-1px -1px 0 rgba(255, 255, 255, 0.7), /* Top-left highlight */
+		1px 1px 0 rgba(0, 0, 0, 0.3); /* Bottom-right shadow */
+}
+.nav-top > .separator { flex: 1 1 auto; }
+
+.layout {
+	display: flex;
+}
+.nav-left {
+	background: #d1e1f1;
+	height: calc(100vh - 69px);
+	overflow-y: auto;
+	position: sticky;
+	top: 69px;
+	width: 255px;
+}
+.nav-left > div > div:first-child {
+	align-items: center;
+	border-bottom: 1px solid rgba(255,255,255,0.75);
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	padding: 7px 13px 7px 21px;
+}
+.nav-left div > div:nth-child(2) {
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.5s;
+}
+.nav-left div:has(.active) > div:nth-child(2) {
+	max-height: 50vh;
+}
+
+.nav-left a {
+	border-bottom: 1px solid rgba(255,255,255,0.75);
+	display: block;
+	padding: 7px 13px 7px 21px;
+	text-decoration: none;
+}
+.nav-left > div > div:nth-child(2) a {
+	padding-left: 37px;
+}
+.nav-left span, .nav-left i { pointer-events: none; }
+.nav-left a, .nav-left span, .nav-left i {
+	color: #7191d1;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 30px;
+	text-shadow:
+		-1px -1px 0 rgba(255, 255, 255, 0.75), /* Top-left highlight */
+		1px 1px 0 rgba(0, 0, 0, 0.3); /* Bottom-right shadow */
+}
+.nav-left a.active {
+	background: #c1d7f1; /*#5f11c1;*/
+	color: #5171b1;
+	pointer-events: none;
+}
+.nav-left > div:has(.active) {
+	background: #c7d7f1;
+}
+.nav-left div i::before {
+	content: "\f0da";
+}
+.nav-left > div:has(.active) > div i::before {
+	content: "\f0d7";
+}
+
+.nav-left a:hover, .nav-left > div > div:first-child:hover {
+	background: #c1d7f1; /*#5f11c1;*/
+}
+.nav-left a:hover, .nav-left > div > div:first-child:hover span, .nav-left > div > div:first-child:hover i {
+	color: #5171b1;
+}
+
+.content {
+	background: #f1f1f1;
+	flex: 1 1 auto;
+}
