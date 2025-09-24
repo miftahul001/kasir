@@ -6,6 +6,8 @@
 <link href="img/logo.svg" rel="icon" sizes="any" type="image/svg+xml">
 <link href="font/css/all.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+<link href="css/dasboard.css" rel="stylesheet">
+<script src="js/echarts.min.js"></script>
 
 <script>
 
@@ -15,6 +17,28 @@ const ddClick = a => {
 		b != a.target && a.target.classList.add('active')
 	})(document.querySelector('.nav-left .active'))
 }
+
+const halaman = {}
+
+addEventListener('load', a => {
+	fetch('data/api.php?req=barang').then(a=>a.json()).then(a => {
+		console.log(a)
+	})
+})
+
+addEventListener('load', a => {
+	fetch('dasboard.html').then(a=>a.text()).then(a => {
+		document.querySelector('.content').innerHTML = a
+		fetch('data/api.php?req=dasboard').then(a=>a.json()).then(a => {
+			const dasboard = document.querySelector('#dasboard').children[1]
+			dasboard.children[0].children[1].textContent = a.data.j_barang
+			dasboard.children[1].children[1].textContent = a.data.j_stok
+			dasboard.children[2].children[1].textContent = a.data.j_terjual
+			dasboard.children[3].children[1].textContent = a.data.j_stok_terjual
+		})
+	})
+})
+
 </script>
 
 </head><body>

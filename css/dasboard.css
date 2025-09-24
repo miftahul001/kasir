@@ -1,0 +1,32 @@
+#dasboard > div:nth-child(1) {
+	font-size: 33px;
+	font-weight: 600;
+	padding: 15px 21px;
+}
+#dasboard > div:nth-child(2) {
+	display: flex;
+	justify-content: space-between;
+	padding: 9px 37px 15px 21px;
+}
+#dasboard > div:nth-child(2) > div {
+	border-radius: 5px;
+	box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
+	width: 21%;
+}
+#dasboard > div:nth-child(2) > div:nth-child(1) {
+	border-left: 3px solid #24b665;
+}
+#dasboard > div:nth-child(2) > div:nth-child(2) {
+	border-left: 3px solid #4fbada;
+}
+#dasboard > div:nth-child(2) > div:nth-child(3) {
+	border-left: 3px solid #e7913c;
+}
+#dasboard > div:nth-child(2) > div:nth-child(4) {
+	border-left: 3px solid #7369cf;
+}
+#dasboard > div:nth-child(2) > div > div {
+	padding: 15px;
+	text-align: center;
+}
+/* .bg-biru #4fbada; .bg-orange #e7913c; .bg-hijau #24b665; .bg-ungu #7369cf; red #F54927; rgb(78, 115, 223) #4f73df #4387f5 */
